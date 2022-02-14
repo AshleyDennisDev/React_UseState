@@ -1,8 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Coffees from './Coffees';
 import './App.css';
+
 
 function App() {
   const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    setCounter(500)
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +23,9 @@ function App() {
         &nbsp;
         <button
         onClick={() => setCounter(counter - 1)} 
-
         > - </button>
+        
+        <Coffees/>
       </header>
     </div>
   );
